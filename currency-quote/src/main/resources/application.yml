@@ -1,2 +1,12 @@
-greeting:
-  message: "hello"
+quarkus:
+  http:
+    port: 8081
+
+br:
+  com:
+    bank:
+      api:
+        viacep:
+          AwesomeApi/mp-rest/:
+            uri: https://economia.awesomeapi.com.br/last/
+            scope: javax.inject.Singleton
