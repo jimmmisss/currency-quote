@@ -1,30 +1,26 @@
 package br.com.money.adapter.out.api.awesomeapi;
 
-import br.com.money.application.domain.CurrencyQuote;
-import br.com.money.application.port.out.GetCurrencyQuoteOut;
-import br.com.money.infra.InjectContext;
+import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
+import br.com.money.application.port.out.GetCurrencyQuotePortOut;
+import lombok.RequiredArgsConstructor;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import java.util.Map;
 
-@InjectContext
-public class AwesomeApiService implements GetCurrencyQuoteOut {
+@ApplicationScoped
+@RequiredArgsConstructor
+public class AwesomeApiService implements GetCurrencyQuotePortOut {
 
+    @Inject
     @RestClient
     AwesomeApi awesomeApi;
 
     private final CurrencyQuoteMapper currencyQuoteMapper;
 
-    public AwesomeApiService(CurrencyQuoteMapper currencyQuoteMapper) {
-        this.currencyQuoteMapper = currencyQuoteMapper;
-    }
-
     @Override
-    public List<CurrencyQuote> getCurrenciesQuoteApi(String currencies) {
-        var jsonCurrencyQuotes = awesomeApi.currencyQuoteValues(currencies);
-        return jsonCurrencyQuotes.stream()
-                .map(currencyQuoteMapper::map)
-                .collect(Collectors.toList());
+    public Map<String, JsonCurrencyQuoteValue> getCurrenciesQuoteApi(String currencies) {
+        return awesomeApi.currencyQuoteValues(currencies);
     }
 }

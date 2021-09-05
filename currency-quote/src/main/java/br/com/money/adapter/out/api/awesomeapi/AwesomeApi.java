@@ -1,19 +1,19 @@
 package br.com.money.adapter.out.api.awesomeapi;
 
-import br.com.money.adapter.payload.JsonCurrencyQuote;
+import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
+import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.util.List;
+import java.util.Map;
 
-@Path("/last")
-@RegisterRestClient
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+@Path("/json/last")
+@RegisterRestClient(configKey = "currency-quote-api")
+@RegisterProvider(NotFoundException.class)
 public interface AwesomeApi {
 
     @GET
-    @Path("/{money}")
-    List<JsonCurrencyQuote> currencyQuoteValues(@PathParam("money") String money);
+    @Path("/{currencies}")
+    @Produces("application/json")
+    Map<String, JsonCurrencyQuoteValue> currencyQuoteValues(@PathParam("currencies") String currencies);
 }

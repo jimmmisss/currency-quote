@@ -1,12 +1,9 @@
 quarkus:
   http:
     port: 8081
+  swagger-ui:
+    path: /api
+    always-include: true
 
-br:
-  com:
-    bank:
-      api:
-        viacep:
-          AwesomeApi/mp-rest/:
-            uri: https://economia.awesomeapi.com.br/last/
-            scope: javax.inject.Singleton
+currency-quote-api/mp-rest/url: https://economia.awesomeapi.com.br
+currency-quote-api/mp-rest/scope: javax.inject.Singleton

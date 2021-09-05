@@ -1,24 +1,22 @@
 package br.com.money.application.domain;
 
-import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
-
 public class CurrencyQuote {
 
-    private JsonCurrencyQuoteValue jsonCurrencyQuoteValue;
+    private CurrencyQuoteValue currencyQuoteValue;
 
     public CurrencyQuote() {
     }
 
-    public CurrencyQuote(JsonCurrencyQuoteValue jsonCurrencyQuoteValue) {
-        this.jsonCurrencyQuoteValue = jsonCurrencyQuoteValue;
+    public CurrencyQuote(CurrencyQuoteValue currencyQuoteValue) {
+        this.currencyQuoteValue = currencyQuoteValue;
     }
 
-    public JsonCurrencyQuoteValue getJsonCurrencyQuoteValue() {
-        return jsonCurrencyQuoteValue;
+    public CurrencyQuoteValue getCurrencyQuoteValue() {
+        return currencyQuoteValue;
     }
 
-    public void setJsonCurrencyQuoteValue(JsonCurrencyQuoteValue jsonCurrencyQuoteValue) {
-        this.jsonCurrencyQuoteValue = jsonCurrencyQuoteValue;
+    public void setCurrencyQuoteValue(CurrencyQuoteValue currencyQuoteValue) {
+        this.currencyQuoteValue = currencyQuoteValue;
     }
 }
 

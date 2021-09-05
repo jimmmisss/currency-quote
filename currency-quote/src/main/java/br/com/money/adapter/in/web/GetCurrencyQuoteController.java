@@ -1,7 +1,8 @@
 package br.com.money.adapter.in.web;
 
 import br.com.money.adapter.payload.JsonCurrencyQuote;
-import br.com.money.application.port.in.GetCurrencyQuoteIn;
+import br.com.money.application.port.in.GetCurrencyQuotePortIn;
+import lombok.RequiredArgsConstructor;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.ws.rs.*;
@@ -12,19 +13,16 @@ import java.util.List;
 @Tag(name = "Currency quote")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@RequiredArgsConstructor
 public class GetCurrencyQuoteController {
 
-    private final GetCurrencyQuoteIn getCurrencyQuoteIn;
-
-    public GetCurrencyQuoteController(GetCurrencyQuoteIn getCurrencyQuoteIn) {
-        this.getCurrencyQuoteIn = getCurrencyQuoteIn;
-    }
+    private final GetCurrencyQuotePortIn getCurrencyQuotePortIn;
 
     @GET
-    @Path("money/{currencies}/value/{productValue}")
+    @Path("/{currencies}/value/{productValue}")
     public List<JsonCurrencyQuote> getCurrencyQuote(@PathParam("currencies") String currencies,
                                                     @PathParam("productValue") String productValue) {
-        var currencyQuotes = getCurrencyQuoteIn.getCurrencyQuote(currencies, productValue);
+        var currencyQuotes = getCurrencyQuotePortIn.getCurrencyQuotes(currencies, productValue);
         return null;
     }
 }

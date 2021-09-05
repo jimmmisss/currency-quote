@@ -7,7 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-09-02T22:48:07-0300",
+    date = "2021-09-05T13:43:03-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.11 (Ubuntu)"
 )
 @ApplicationScoped
@@ -20,8 +20,6 @@ public class CurrencyQuoteMapperImpl implements CurrencyQuoteMapper {
         }
 
         CurrencyQuote currencyQuote = new CurrencyQuote();
-
-        currencyQuote.setJsonCurrencyQuoteValue( jsonCurrencyQuote.getJsonCurrencyQuoteValue() );
 
         return currencyQuote;
     }
