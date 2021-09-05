@@ -3,11 +3,8 @@ br/com/money/adapter/out/api/awesomeapi/AwesomeApiService.class
 br/com/money/adapter/out/api/awesomeapi/AwesomeApi.class
 br/com/money/adapter/in/web/GetCurrencyQuoteController.class
 br/com/money/application/port/in/GetCurrencyQuotePortIn.class
-br/com/money/adapter/out/api/awesomeapi/CurrencyQuoteMapper.class
 br/com/money/infra/InjectContext.class
 br/com/money/application/service/in/GetCurrencyQuoteImpl.class
 br/com/money/application/domain/CurrencyQuoteValue.class
-br/com/money/adapter/payload/JsonCurrencyQuote.class
-br/com/money/adapter/out/api/awesomeapi/CurrencyQuoteMapperImpl.class
 br/com/money/application/port/out/GetCurrencyQuotePortOut.class
 br/com/money/application/domain/CurrencyQuote.class

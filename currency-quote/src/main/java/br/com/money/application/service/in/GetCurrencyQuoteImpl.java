@@ -1,9 +1,7 @@
 package br.com.money.application.service.in;
 
-import br.com.money.adapter.payload.JsonCurrencyQuote;
 import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
 import br.com.money.application.domain.CurrencyQuote;
-import br.com.money.application.domain.CurrencyQuoteValue;
 import br.com.money.application.port.in.GetCurrencyQuotePortIn;
 import br.com.money.application.port.out.GetCurrencyQuotePortOut;
 import br.com.money.infra.InjectContext;

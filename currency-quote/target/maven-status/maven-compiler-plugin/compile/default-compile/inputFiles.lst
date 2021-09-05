@@ -1,12 +1,10 @@
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/payload/JsonCurrencyQuoteValue.java
-/home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/out/api/awesomeapi/CurrencyQuoteMapper.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/out/api/awesomeapi/AwesomeApiService.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/domain/CurrencyQuote.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/in/web/GetCurrencyQuoteController.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/out/api/awesomeapi/AwesomeApi.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/port/in/GetCurrencyQuotePortIn.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/infra/InjectContext.java
-/home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/payload/JsonCurrencyQuote.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/service/in/GetCurrencyQuoteImpl.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/domain/CurrencyQuoteValue.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/port/out/GetCurrencyQuotePortOut.java
