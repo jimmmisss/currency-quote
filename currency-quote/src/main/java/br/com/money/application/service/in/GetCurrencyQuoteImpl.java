@@ -1,11 +1,12 @@
 package br.com.money.application.service.in;
 
-import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
-import br.com.money.application.domain.CurrencyQuote;
+import br.com.money.application.domain.CurrencyQuoteValue;
+import br.com.money.infra.payload.JsonCurrencyQuoteValue;
 import br.com.money.application.port.in.GetCurrencyQuotePortIn;
 import br.com.money.application.port.out.GetCurrencyQuotePortOut;
 import br.com.money.infra.InjectContext;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,12 +20,17 @@ public class GetCurrencyQuoteImpl implements GetCurrencyQuotePortIn {
     }
 
     @Override
-    public List<CurrencyQuote> getCurrencyQuotes(String currencies, String currencyValue) {
-        // apply rules
+    public List<CurrencyQuoteValue> getCurrencyQuotes(String currencies) {
+
         var currenciesQuoteApi = getCurrencyQuotePortOut.getCurrenciesQuoteApi(currencies);
-        for (Map.Entry<String, JsonCurrencyQuoteValue> x : currenciesQuoteApi.entrySet()) {
-            System.out.println(x.getKey() + " = " + x.getValue().getName());
+        List<CurrencyQuoteValue> map = new ArrayList<>();
+        for (Map.Entry<String, JsonCurrencyQuoteValue> entry : currenciesQuoteApi.entrySet()) {
+
+            CurrencyQuoteValue currencyQuoteValue = new CurrencyQuoteValue();
+            currencyQuoteValue.setHigh(entry.getValue().getHigh());
+            currencyQuoteValue.setName(entry.getValue().getName());
+            map.add(currencyQuoteValue);
         }
-        return null;
+        return map;
     }
 }

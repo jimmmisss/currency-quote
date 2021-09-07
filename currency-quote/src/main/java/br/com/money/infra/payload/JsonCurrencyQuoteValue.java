@@ -1,6 +1,6 @@
-package br.com.money.application.domain;
+package br.com.money.infra.payload;
 
-public class CurrencyQuoteValue {
+public class JsonCurrencyQuoteValue {
 
     private String name;
     private String high;

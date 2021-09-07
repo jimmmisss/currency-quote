@@ -1,6 +1,6 @@
 package br.com.money.adapter.out.api.awesomeapi;
 
-import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
+import br.com.money.infra.payload.JsonCurrencyQuoteValue;
 import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 

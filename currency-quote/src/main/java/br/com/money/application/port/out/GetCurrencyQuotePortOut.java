@@ -1,6 +1,6 @@
 package br.com.money.application.port.out;
 
-import br.com.money.adapter.payload.JsonCurrencyQuoteValue;
+import br.com.money.infra.payload.JsonCurrencyQuoteValue;
 
 import java.util.Map;
 
