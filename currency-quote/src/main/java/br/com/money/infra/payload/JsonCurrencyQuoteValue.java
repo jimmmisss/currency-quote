@@ -1,23 +1,25 @@
 package br.com.money.infra.payload;
 
+import java.math.BigDecimal;
+
 public class JsonCurrencyQuoteValue {
 
-    private String name;
-    private String high;
+    private String code;
+    private BigDecimal valueProductInCurrency;
 
-    public String getName() {
-        return name;
+    public String getCode() {
+        return code;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getHigh() {
-        return high;
+    public BigDecimal getValueProductInCurrency() {
+        return valueProductInCurrency;
     }
 
-    public void setHigh(String high) {
-        this.high = high;
+    public void setValueProductInCurrency(BigDecimal valueProductInCurrency) {
+        this.valueProductInCurrency = valueProductInCurrency;
     }
 }

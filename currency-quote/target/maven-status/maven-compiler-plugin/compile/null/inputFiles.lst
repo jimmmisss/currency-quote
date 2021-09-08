@@ -5,6 +5,7 @@
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/adapter/out/api/awesomeapi/AwesomeApi.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/port/in/GetCurrencyQuotePortIn.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/infra/InjectContext.java
+/home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/infra/payload/JsonCurrencyQuoteValueApi.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/service/in/GetCurrencyQuoteImpl.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/domain/CurrencyQuoteValue.java
 /home/jimmmisss/Documents/money/currency-quote/src/main/java/br/com/money/application/port/out/GetCurrencyQuotePortOut.java

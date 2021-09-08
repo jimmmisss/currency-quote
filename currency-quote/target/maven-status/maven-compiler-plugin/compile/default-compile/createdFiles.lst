@@ -8,3 +8,4 @@ br/com/money/infra/InjectContext.class
 br/com/money/application/service/in/GetCurrencyQuoteImpl.class
 br/com/money/application/domain/CurrencyQuoteValue.class
 br/com/money/application/port/out/GetCurrencyQuotePortOut.class
+br/com/money/infra/payload/JsonCurrencyQuoteValueApi.class

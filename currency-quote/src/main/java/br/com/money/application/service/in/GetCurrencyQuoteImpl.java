@@ -1,14 +1,14 @@
 package br.com.money.application.service.in;
 
 import br.com.money.application.domain.CurrencyQuoteValue;
-import br.com.money.infra.payload.JsonCurrencyQuoteValue;
 import br.com.money.application.port.in.GetCurrencyQuotePortIn;
 import br.com.money.application.port.out.GetCurrencyQuotePortOut;
 import br.com.money.infra.InjectContext;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 @InjectContext
 public class GetCurrencyQuoteImpl implements GetCurrencyQuotePortIn {
@@ -20,17 +20,21 @@ public class GetCurrencyQuoteImpl implements GetCurrencyQuotePortIn {
     }
 
     @Override
-    public List<CurrencyQuoteValue> getCurrencyQuotes(String currencies) {
+    public List<CurrencyQuoteValue> getCurrencyQuotes(String currencies, BigDecimal valueProduct) {
 
         var currenciesQuoteApi = getCurrencyQuotePortOut.getCurrenciesQuoteApi(currencies);
         List<CurrencyQuoteValue> map = new ArrayList<>();
-        for (Map.Entry<String, JsonCurrencyQuoteValue> entry : currenciesQuoteApi.entrySet()) {
 
-            CurrencyQuoteValue currencyQuoteValue = new CurrencyQuoteValue();
-            currencyQuoteValue.setHigh(entry.getValue().getHigh());
-            currencyQuoteValue.setName(entry.getValue().getName());
-            map.add(currencyQuoteValue);
-        }
+        currenciesQuoteApi.values().stream()
+                .map(jsonCurrencyQuoteValue -> {
+                    var valueCurrencyApi = BigDecimal.valueOf(Double.parseDouble(jsonCurrencyQuoteValue.getHigh()));
+                    var valueProductCurrency = valueCurrencyApi.multiply(valueProduct);
+                    CurrencyQuoteValue currencyQuoteValue = new CurrencyQuoteValue();
+                    currencyQuoteValue.setCode(jsonCurrencyQuoteValue.getCode());
+                    currencyQuoteValue.setValueProductInCurrency(valueProductCurrency);
+                    return map.add(currencyQuoteValue);
+                }).collect(Collectors.toList());
+
         return map;
     }
 }

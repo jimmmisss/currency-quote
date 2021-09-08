@@ -2,6 +2,7 @@ package br.com.money.adapter.out.api.awesomeapi;
 
 import br.com.money.infra.payload.JsonCurrencyQuoteValue;
 import br.com.money.application.port.out.GetCurrencyQuotePortOut;
+import br.com.money.infra.payload.JsonCurrencyQuoteValueApi;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -16,7 +17,7 @@ public class AwesomeApiService implements GetCurrencyQuotePortOut {
     AwesomeApi awesomeApi;
 
     @Override
-    public Map<String, JsonCurrencyQuoteValue> getCurrenciesQuoteApi(String currencies) {
+    public Map<String, JsonCurrencyQuoteValueApi> getCurrenciesQuoteApi(String currencies) {
         return awesomeApi.currencyQuoteValues(currencies);
     }
 }
