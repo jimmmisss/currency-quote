@@ -1,6 +1,5 @@
 package br.com.money.adapter.in.web;
 
-import br.com.money.application.domain.CurrencyQuoteValue;
 import br.com.money.application.port.in.GetCurrencyQuotePortIn;
 import br.com.money.infra.payload.JsonCurrencyQuoteValue;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
@@ -28,7 +27,7 @@ public class GetCurrencyQuoteController {
     public List<JsonCurrencyQuoteValue> getCurrencyQuote(@PathParam("currencies") String currencies,
                                                          @PathParam("valueProduct") BigDecimal valueProduct) {
         var currencyQuotes = getCurrencyQuotePortIn.getCurrencyQuotes(currencies, valueProduct);
-         return currencyQuotes.stream()
+        return currencyQuotes.stream()
                 .map(e -> {
                     var jsonCurrencyQuoteValue = new JsonCurrencyQuoteValue();
                     jsonCurrencyQuoteValue.setCode(e.getCode());

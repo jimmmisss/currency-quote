@@ -1,5 +1,4 @@
 br/com/money/adapter/out/api/awesomeapi/AwesomeApiService.class
-br/com/money/infra/payload/JsonCurrencyQuote.class
 br/com/money/adapter/out/api/awesomeapi/AwesomeApi.class
 br/com/money/adapter/in/web/GetCurrencyQuoteController.class
 br/com/money/application/port/in/GetCurrencyQuotePortIn.class

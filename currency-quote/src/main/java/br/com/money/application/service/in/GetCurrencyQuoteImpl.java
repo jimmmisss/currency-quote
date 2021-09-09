@@ -21,20 +21,19 @@ public class GetCurrencyQuoteImpl implements GetCurrencyQuotePortIn {
 
     @Override
     public List<CurrencyQuoteValue> getCurrencyQuotes(String currencies, BigDecimal valueProduct) {
-
-        var currenciesQuoteApi = getCurrencyQuotePortOut.getCurrenciesQuoteApi(currencies);
-        List<CurrencyQuoteValue> map = new ArrayList<>();
+        var currenciesQuoteApi = getCurrencyQuotePortOut
+                .getCurrenciesQuoteApi(currencies);
+        List<CurrencyQuoteValue> currencyQuoteValues = new ArrayList<>();
 
         currenciesQuoteApi.values().stream()
                 .map(jsonCurrencyQuoteValue -> {
                     var valueCurrencyApi = BigDecimal.valueOf(Double.parseDouble(jsonCurrencyQuoteValue.getHigh()));
                     var valueProductCurrency = valueCurrencyApi.multiply(valueProduct);
-                    CurrencyQuoteValue currencyQuoteValue = new CurrencyQuoteValue();
+                    var currencyQuoteValue = new CurrencyQuoteValue();
                     currencyQuoteValue.setCode(jsonCurrencyQuoteValue.getCode());
                     currencyQuoteValue.setValueProductInCurrency(valueProductCurrency);
-                    return map.add(currencyQuoteValue);
+                    return currencyQuoteValues.add(currencyQuoteValue);
                 }).collect(Collectors.toList());
-
-        return map;
+        return currencyQuoteValues;
     }
 }
