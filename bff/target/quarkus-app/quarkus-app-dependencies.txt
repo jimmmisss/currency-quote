@@ -35,6 +35,8 @@ io.quarkus:quarkus-apache-httpclient::jar:2.2.1.Final
 io.quarkus:quarkus-arc::jar:2.2.1.Final
 io.quarkus:quarkus-bootstrap-runner::jar:2.2.1.Final
 io.quarkus:quarkus-config-yaml::jar:2.2.1.Final
+io.quarkus:quarkus-container-image-docker::jar:2.2.1.Final
+io.quarkus:quarkus-container-image::jar:2.2.1.Final
 io.quarkus:quarkus-core::jar:2.2.1.Final
 io.quarkus:quarkus-development-mode-spi::jar:2.2.1.Final
 io.quarkus:quarkus-jackson::jar:2.2.1.Final
