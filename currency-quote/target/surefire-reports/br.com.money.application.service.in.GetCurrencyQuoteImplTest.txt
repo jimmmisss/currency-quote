@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.money.application.service.in.GetCurrencyQuoteImplTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.521 s - in br.com.money.application.service.in.GetCurrencyQuoteImplTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.774 s - in br.com.money.application.service.in.GetCurrencyQuoteImplTest

@@ -20,7 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bff" options="-parameters" />
       <module name="currency-quote" options="-parameters" />
-      <module name="money-currency-quote" options="-parameters" />
+      <module name="money-currency-quote" options="" />
     </option>
   </component>
 </project>
